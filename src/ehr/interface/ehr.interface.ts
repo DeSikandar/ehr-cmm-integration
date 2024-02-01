@@ -34,4 +34,10 @@ export class EHR {
   zip: number;
   @ApiProperty()
   labID: string;
+
+  @ApiProperty()
+  insurance_token: string;
+
+  @ApiProperty()
+  prescription_token: string;
 }

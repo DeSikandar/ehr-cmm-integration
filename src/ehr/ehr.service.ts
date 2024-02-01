@@ -17,6 +17,8 @@ export class EhrService {
       state: 'CA',
       zip: 12345,
       labID: '1344',
+      insurance_token: '19sienglo92831n5',
+      prescription_token: 'z3q2jr',
     },
   ];
 

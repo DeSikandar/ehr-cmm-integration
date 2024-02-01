@@ -21,6 +21,12 @@ export class CMMData {
   zip: number;
   @ApiProperty()
   labID: string;
+
+  @ApiProperty()
+  insurance_token: string;
+
+  @ApiProperty()
+  prescription_token: string;
 }
 
 export class ResponseDto {

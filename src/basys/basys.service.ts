@@ -27,6 +27,8 @@ export class BasysService {
       state: data.state,
       zip: data.zip,
       labID: data.labID,
+      prescription_token: data.prescription_token,
+      insurance_token: data.insurance_token,
     };
     const res = this.cmmService.send_to_cmm(send_data);
     if (res.status == 200) {
