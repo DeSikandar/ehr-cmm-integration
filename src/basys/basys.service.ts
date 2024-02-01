@@ -11,7 +11,7 @@ export class BasysService {
     private readonly cmmService: CmmService,
   ) {}
 
-  process_and_submit_to_CMM(filter: EHRFilter) {
+  async process_and_submit_to_CMM(filter: EHRFilter) {
     const data = this.ehrService.fetch_ehr_data(filter);
     if (!data) {
       throw new NotFoundException('EHR data not found');
@@ -30,11 +30,12 @@ export class BasysService {
       prescription_token: data.prescription_token,
       insurance_token: data.insurance_token,
     };
-    const res = this.cmmService.send_to_cmm(send_data);
+    const res = await this.cmmService.send_to_cmm(send_data);
     if (res.status == 200) {
       return { message: 'Data process and Submitted successfully' };
     } else {
-      return res;
+      console.log(res)
+      return res
     }
   }
 }
